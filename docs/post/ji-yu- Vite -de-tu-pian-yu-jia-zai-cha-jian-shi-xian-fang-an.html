@@ -12,17 +12,13 @@
     </script>
 <meta name="description" content="# preloadImageVite图片预加载
 
----
-
-### 1. **插件功能**
+## 1. **插件功能**
 
 + **预加载图片**：在构建时扫描指定目录下的图片，并在 HTML 中注入 `<link rel='preload'>` 标签，提升图片加载速度。">
 <meta property="og:title" content="基于 Vite 的图片预加载插件实现方案">
 <meta property="og:description" content="# preloadImageVite图片预加载
 
----
-
-### 1. **插件功能**
+## 1. **插件功能**
 
 + **预加载图片**：在构建时扫描指定目录下的图片，并在 HTML 中注入 `<link rel='preload'>` 标签，提升图片加载速度。">
 <meta property="og:type" content="article">
@@ -96,8 +92,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><h1>preloadImageVite图片预加载</h1>
-<hr>
-<h3>1. <strong>插件功能</strong></h3>
+<h2>1. <strong>插件功能</strong></h2>
 <ul>
 <li><strong>预加载图片</strong>：在构建时扫描指定目录下的图片，并在 HTML 中注入 <code class="notranslate">&lt;link rel="preload"&gt;</code> 标签，提升图片加载速度。</li>
 <li><strong>可配置项</strong>：
@@ -107,8 +102,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ul>
 </li>
 </ul>
-<hr>
-<h3>2. <strong>核心实现</strong></h3>
+<h2>2. <strong>核心实现</strong></h2>
 <ul>
 <li><strong>钩子</strong>：使用 Vite 的 <code class="notranslate">transformIndexHtml</code> 钩子，在构建时修改 HTML 文件。</li>
 <li><strong>扫描图片</strong>：通过 <code class="notranslate">fs.readdirSync</code> 读取图片目录，过滤出图片文件（支持 jpg、jpeg、png、gif、svg）。</li>
@@ -167,15 +161,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-kos">}</span><span class="pl-kos">,</span>
   <span class="pl-kos">}</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span></pre></div>
-<hr>
-<h3>3. <strong>配置项说明</strong></h3>
+<h2>3. <strong>配置项说明</strong></h2>
 <ul>
 <li><code class="notranslate">rel</code>：控制 link 标签的 rel 属性，默认 <code class="notranslate">'preload'</code>，可改为 <code class="notranslate">'prefetch'</code>。</li>
 <li><code class="notranslate">imageDir</code>：指定图片目录，支持绝对路径或相对路径。</li>
 </ul>
 <p><code class="notranslate">preload</code> 和 <code class="notranslate">prefetch</code> 都是 <code class="notranslate">&lt;link&gt;</code> 标签的 <code class="notranslate">rel</code> 属性值，用于优化资源加载，但它们的作用和使用场景有明显区别：</p>
-<hr>
-<h4>1. <code class="notranslate">preload</code></h4>
+<h3>1. <code class="notranslate">preload</code></h3>
 <ul>
 <li><strong>作用</strong>：告诉浏览器“这个资源很快就会用到，请优先加载”。</li>
 <li><strong>使用场景</strong>：首屏渲染、关键资源（如首屏图片、字体、CSS、JS）。</li>
@@ -188,8 +180,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ul>
 </li>
 </ul>
-<hr>
-<h4>2. <code class="notranslate">prefetch</code></h4>
+<h3>2. <code class="notranslate">prefetch</code></h3>
 <ul>
 <li><strong>作用</strong>：告诉浏览器“这个资源将来可能会用到，可以在空闲时提前下载”。</li>
 <li><strong>使用场景</strong>：二级页面、后续可能用到的资源（如路由懒加载 JS、下一个页面的图片）。</li>
@@ -202,8 +193,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ul>
 </li>
 </ul>
-<hr>
-<h4>总结对比</h4>
+<h3>总结对比</h3>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
@@ -231,14 +221,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
-<hr>
 <p><strong>一句话理解</strong>：</p>
 <ul>
 <li><code class="notranslate">preload</code> 是“马上要用，赶紧下！”</li>
 <li><code class="notranslate">prefetch</code> 是“以后可能用，闲了再下。”</li>
 </ul>
-<hr>
-<h3>4. <strong>使用示例</strong></h3>
+<h2>4. <strong>使用示例</strong></h2>
 <div class="highlight highlight-source-ts"><pre class="notranslate"><span class="pl-c">// vite.config.ts</span>
 <span class="pl-k">import</span> <span class="pl-s1">preloadImageVite</span> <span class="pl-k">from</span> <span class="pl-s">'./plugins/preloadImageVite'</span><span class="pl-kos">;</span>
 
@@ -250,21 +238,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">,</span>
   <span class="pl-kos">]</span><span class="pl-kos">,</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
-<hr>
-<h3>5. <strong>注意事项</strong></h3>
+<h2>5. <strong>注意事项</strong></h2>
 <ul>
 <li>图片路径需与 <code class="notranslate">imageDir</code> 配置一致，否则无法正确生成 preload 标签。</li>
 <li>插件仅在构建时生效，开发时不会注入 preload 标签。</li>
 </ul>
-<hr>
-<h3>6. <strong>优化点</strong></h3>
+<h2>6. <strong>优化点</strong></h2>
 <ul>
 <li>支持更多图片格式。</li>
 <li>支持多目录扫描。</li>
 <li>支持自定义 publicPath。</li>
 </ul>
-<hr>
-<h3>7. <strong>总结</strong></h3>
+<h2>7. <strong>总结</strong></h2>
 <ul>
 <li>插件通过 Vite 钩子实现图片预加载，提升页面加载速度。</li>
 <li>配置灵活，可根据需求调整 rel 和图片目录。</li>

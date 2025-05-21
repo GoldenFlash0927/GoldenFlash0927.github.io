@@ -1,17 +1,13 @@
 # preloadImageVite图片预加载
 
----
-
-### 1. **插件功能**
+## 1. **插件功能**
 
 + **预加载图片**：在构建时扫描指定目录下的图片，并在 HTML 中注入 `<link rel="preload">` 标签，提升图片加载速度。
 + **可配置项**：
   - `rel`：link 标签的 rel 属性（默认 `'preload'`）。
   - `imageDir`：图片目录路径（默认 `'../src/assets/image'`）。
 
----
-
-### 2. **核心实现**
+## 2. **核心实现**
 
 + **钩子**：使用 Vite 的 `transformIndexHtml` 钩子，在构建时修改 HTML 文件。
 + **扫描图片**：通过 `fs.readdirSync` 读取图片目录，过滤出图片文件（支持 jpg、jpeg、png、gif、svg）。
@@ -73,19 +69,14 @@ export default function preloadImageVite(options: PreloadImageViteOptions = {}):
 }
 
 ```
-
----
-
-### 3. **配置项说明**
+## 3. **配置项说明**
 
 + `rel`：控制 link 标签的 rel 属性，默认 `'preload'`，可改为 `'prefetch'`。
 + `imageDir`：指定图片目录，支持绝对路径或相对路径。
 
 `preload` 和 `prefetch` 都是 `<link>` 标签的 `rel` 属性值，用于优化资源加载，但它们的作用和使用场景有明显区别：
 
----
-
-#### 1. `preload`
+### 1. `preload`
 
 + **作用**：告诉浏览器“这个资源很快就会用到，请优先加载”。
 + **使用场景**：首屏渲染、关键资源（如首屏图片、字体、CSS、JS）。
@@ -95,9 +86,7 @@ export default function preloadImageVite(options: PreloadImageViteOptions = {}):
   - 资源会被立即下载，提升首屏速度。
   - 需要配合 `as` 属性指定资源类型。
 
----
-
-#### 2. `prefetch`
+### 2. `prefetch`
 
 + **作用**：告诉浏览器“这个资源将来可能会用到，可以在空闲时提前下载”。
 + **使用场景**：二级页面、后续可能用到的资源（如路由懒加载 JS、下一个页面的图片）。
@@ -107,26 +96,19 @@ export default function preloadImageVite(options: PreloadImageViteOptions = {}):
   - 不会阻塞当前页面渲染。
   - 资源会被缓存，等真正需要时可直接使用。
 
----
-
-#### 总结对比
+### 总结对比
 
 | 属性     | 作用             | 加载时机         | 适用资源      | 优先级 |
 | -------- | ---------------- | ---------------- | ------------- | ------ |
 | preload  | 当前页面马上要用 | 立即，高优先级   | 首屏/关键资源 | 高     |
 | prefetch | 未来可能会用     | 空闲时，低优先级 | 二级/后续资源 | 低     |
 
-
----
-
 **一句话理解**：  
 
 + `preload` 是“马上要用，赶紧下！”  
 + `prefetch` 是“以后可能用，闲了再下。”
 
----
-
-### 4. **使用示例**
+## 4. **使用示例**
 
 ```typescript
 // vite.config.ts
@@ -142,24 +124,18 @@ export default defineConfig({
 });
 ```
 
----
-
-### 5. **注意事项**
+## 5. **注意事项**
 
 + 图片路径需与 `imageDir` 配置一致，否则无法正确生成 preload 标签。
 + 插件仅在构建时生效，开发时不会注入 preload 标签。
 
----
-
-### 6. **优化点**
+## 6. **优化点**
 
 + 支持更多图片格式。
 + 支持多目录扫描。
 + 支持自定义 publicPath。
 
----
-
-### 7. **总结**
+## 7. **总结**
 
 + 插件通过 Vite 钩子实现图片预加载，提升页面加载速度。
 + 配置灵活，可根据需求调整 rel 和图片目录。
