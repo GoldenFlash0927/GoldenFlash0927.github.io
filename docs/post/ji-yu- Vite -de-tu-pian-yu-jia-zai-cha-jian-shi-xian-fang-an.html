@@ -10,15 +10,11 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# preloadImageVite图片预加载
-
-## 1. **插件功能**
+<meta name="description" content="## 1. **插件功能**
 
 + **预加载图片**：在构建时扫描指定目录下的图片，并在 HTML 中注入 `<link rel='preload'>` 标签，提升图片加载速度。">
 <meta property="og:title" content="基于 Vite 的图片预加载插件实现方案">
-<meta property="og:description" content="# preloadImageVite图片预加载
-
-## 1. **插件功能**
+<meta property="og:description" content="## 1. **插件功能**
 
 + **预加载图片**：在构建时扫描指定目录下的图片，并在 HTML 中注入 `<link rel='preload'>` 标签，提升图片加载速度。">
 <meta property="og:type" content="article">
@@ -91,8 +87,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>preloadImageVite图片预加载</h1>
-<h2>1. <strong>插件功能</strong></h2>
+<div class="markdown-body" id="postBody"><h2>1. <strong>插件功能</strong></h2>
 <ul>
 <li><strong>预加载图片</strong>：在构建时扫描指定目录下的图片，并在 HTML 中注入 <code class="notranslate">&lt;link rel="preload"&gt;</code> 标签，提升图片加载速度。</li>
 <li><strong>可配置项</strong>：
