@@ -1,9 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>段智鹏的编程小窝 🏠</title><link>https://GoldenFlash0927.github.io</link><description>嗨～欢迎来到我的前端实验室！🔬
-这里记录着一个爱折腾代码的程序员的日常：💡 分享Vue/React实战技巧 | 🐞 独家踩坑避雷指南 | 🎨 有趣的前端小实验 | 📝 新手友好的学习笔记 | 😫 偶尔的技术吐槽大会
-关于我：☕ 咖啡因依赖患者 | 🎮 游戏宅 | 🐱 铲屎官
-这里没有枯燥的理论，只有：✨ 能直接copy的代码 | 🤣 真实的开发日常 | 💖 满满的干货分享
-欢迎来参观～随时留言交流呀 👋</description><copyright>段智鹏的编程小窝 🏠</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/78634776?v=4&amp;size=64</url><title>avatar</title><link>https://GoldenFlash0927.github.io</link></image><lastBuildDate>Tue, 27 May 2025 01:58:10 +0000</lastBuildDate><managingEditor>段智鹏的编程小窝 🏠</managingEditor><ttl>60</ttl><webMaster>段智鹏的编程小窝 🏠</webMaster><item><title>WeakMap、Map、WeakSet、Set 的作用与区别</title><link>https://GoldenFlash0927.github.io/post/WeakMap%E3%80%81Map%E3%80%81WeakSet%E3%80%81Set%20-de-zuo-yong-yu-qu-bie.html</link><description># WeakMap、Map、WeakSet、Set 的作用与区别
+# WeakMap、Map、WeakSet、Set 的作用与区别
 
 ## 1. Map（映射）
 
@@ -124,6 +119,4 @@ obj1 = null; // 对象被垃圾回收后，自动从WeakSet移除
 
 3. **键/值限制**：
    - WeakMap键必须是对象，WeakSet值必须是对象
-   - Map键和Set值可以是任意类型。</description><guid isPermaLink="true">https://GoldenFlash0927.github.io/post/WeakMap%E3%80%81Map%E3%80%81WeakSet%E3%80%81Set%20-de-zuo-yong-yu-qu-bie.html</guid><pubDate>Tue, 27 May 2025 01:57:40 +0000</pubDate></item><item><title>Vue 中 v-for 使用 key 的重要性详解</title><link>https://GoldenFlash0927.github.io/post/Vue%20-zhong-%20v-for%20-shi-yong-%20key%20-de-zhong-yao-xing-xiang-jie.html</link><description>&gt; 在 Vue 中使用 `v-for` 渲染列表时，我们通常会绑定一个 `key` 属性，这是非常重要的性能优化手段。</description><guid isPermaLink="true">https://GoldenFlash0927.github.io/post/Vue%20-zhong-%20v-for%20-shi-yong-%20key%20-de-zhong-yao-xing-xiang-jie.html</guid><pubDate>Wed, 21 May 2025 14:40:36 +0000</pubDate></item><item><title>微前端的实现</title><link>https://GoldenFlash0927.github.io/post/wei-qian-duan-de-shi-xian.html</link><description>### 测试111。</description><guid isPermaLink="true">https://GoldenFlash0927.github.io/post/wei-qian-duan-de-shi-xian.html</guid><pubDate>Wed, 21 May 2025 07:27:11 +0000</pubDate></item><item><title>基于 Vite 的图片预加载插件实现方案</title><link>https://GoldenFlash0927.github.io/post/ji-yu-%20Vite%20-de-tu-pian-yu-jia-zai-cha-jian-shi-xian-fang-an.html</link><description>## 1. **插件功能**
-
-+ **预加载图片**：在构建时扫描指定目录下的图片，并在 HTML 中注入 `&lt;link rel='preload'&gt;` 标签，提升图片加载速度。</description><guid isPermaLink="true">https://GoldenFlash0927.github.io/post/ji-yu-%20Vite%20-de-tu-pian-yu-jia-zai-cha-jian-shi-xian-fang-an.html</guid><pubDate>Sat, 10 May 2025 06:42:01 +0000</pubDate></item></channel></rss>
+   - Map键和Set值可以是任意类型
